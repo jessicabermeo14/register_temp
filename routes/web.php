@@ -26,3 +26,7 @@ Route::get('/home', function () {
 Route::post('/visitantes/search', [VisitorController::class, 'search'])->name('visitantes.search');
 Route::resource('visitantes', '\App\Http\Controllers\VisitorController');
 Route::resource('registros', '\App\Http\Controllers\RecordController');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
