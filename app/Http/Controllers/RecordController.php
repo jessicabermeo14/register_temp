@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Record;
 use Illuminate\Http\Request;
+use App\Http\Requests\RecordRequest;
 use Illuminate\Support\Facades\Redis;
 
 class RecordController extends Controller
@@ -35,16 +36,8 @@ class RecordController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RecordRequest $request)
     {
-        // $request->validate([
-
-        //     'user_id'     => 'required',
-        //     'temperature' => 'required',
-        //     'temperature' => 'required'
-
-        // ]);
-
         $temperature = $request->initial_temperature;
         if ($temperature >= 38) {
             return view('records.access-denied');

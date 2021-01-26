@@ -33,7 +33,7 @@ class Record extends Model
     ];
 
     //Relación uno a muchos(Inversa)
-    public function user()
+    public function visitor()
     {
         return $this->belongsTo('App\Models\Visitor');
     }

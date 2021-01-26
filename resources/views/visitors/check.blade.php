@@ -9,7 +9,7 @@
         <form class="form-horizontal" method="POST" action="{{ route('visitantes.search') }}" >
           @csrf             
           <fieldset>
-            <h1 class="text-center header">Estas registrado?</h1>
+            <h1 class="text-center header">¿Estas registrado?</h1>
             <div class="form-group">
               <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
               <div class="col-md-8 mx-auto">
@@ -18,9 +18,12 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <div class="col-md-12 text-center">
-              <button id='button-consult' type="submit" class="btn btn-primary btn-lg">Consultar</button>
+            <div class="form-group container">
+              <div class="row justify-content-center">
+                <div class="mx-auto">
+                  <button id='button-consult' type="submit" class="btn btn-primary btn-lg mx-auto">Consultar</button>
+                  <a href="{{ route('visitantes.create') }}"id='button-consult' class="btn btn-primary btn-lg mx-auto">Registrar</a>
+                </div>
               </div>
             </div>
 
@@ -29,7 +32,7 @@
               <a href="{{ route('registros.index') }}" >Registrar la salida </a>
               </div>
             </div>
-            
+
           </fieldset>
         </form>
       </div>

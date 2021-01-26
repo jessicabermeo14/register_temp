@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="container" style="margin:auto">
-  <a href="usuarios/create" class="btn btn-primary mb-3">CREAR</a>
+  <a href="visitantes/create" class="btn btn-primary mb-3">CREAR</a>
   <table id="table-users" class="table table-striped table-bordered shadow-lg  mt-4">
      <thead class="bg-primary text-white">
        <tr>
@@ -26,8 +26,8 @@
          <td> {{ $visitor->document_number }} </td>
          <td> {{ $visitor->phone }} </td>
          {{-- <td>
-           <form action="{{ route('usuarios.destroy', $user->id)}}" method="POST">
-            <a href="usuarios/{{$user->id}}/edit" class="btn btn-info" >Editar</a>
+           <form action="{{ route('usuarios.destroy', $visitor->id)}}" method="POST">
+            <a href="usuarios/{{$visitor->id}}/edit" class="btn btn-info" >Editar</a>
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Borrar</button>

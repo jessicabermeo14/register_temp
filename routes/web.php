@@ -17,16 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-})->middleware(middleware: 'auth');
+// Route::get('/home', function () {
+//     return view('home');
+// })->middleware(middleware: 'auth');
 
-//Route::get('/home', [VisitorController::class, 'home'])->name('visitantes.home')->middleware(middleware: 'auth');
-//Route::get('/principal', [VisitorController::class, 'home'])->name('visitantes.home');
-Route::post('/visitantes/search', [VisitorController::class, 'search'])->name('visitantes.search');
-Route::resource('visitantes', '\App\Http\Controllers\VisitorController');
-Route::resource('registros', '\App\Http\Controllers\RecordController');
+Route::get('/home', [App\Http\Controllers\VisitorController::class, 'home'])->name('visitantes.home')->middleware(middleware: 'auth');
+//Route::get('/principal', [VisitorController::class, 'home'])->name('visitantes.home')->middleware(middleware: 'auth');
+Route::post('/visitantes/search', [App\Http\Controllers\VisitorController::class, 'search'])->name('visitantes.search')->middleware(middleware: 'auth');
+Route::resource('visitantes', '\App\Http\Controllers\VisitorController')->middleware(middleware: 'auth');
+Route::resource('registros', '\App\Http\Controllers\RecordController')->middleware(middleware: 'auth');
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
