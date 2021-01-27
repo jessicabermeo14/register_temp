@@ -20,11 +20,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('css')
 </head>
 <body>
     <div id="app" class="w-100 h-100">
         @include('layouts.navbar')
             @yield('content')
     </div>
+    @yield('js')
 </body>
 </html>

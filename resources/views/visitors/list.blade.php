@@ -21,7 +21,7 @@
      <tbody>
        @foreach ( $visitors as $visitor)
        <tr>
-         <td> {{ $visitor->name }} </td>
+         <td> {{ $visitor->name }} </td>         
          <td> {{ $visitor->document_type }} </td>
          <td> {{ $visitor->document_number }} </td>
          <td> {{ $visitor->phone }} </td>
@@ -40,7 +40,7 @@
 
   @section('js')
 
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
   <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
   
